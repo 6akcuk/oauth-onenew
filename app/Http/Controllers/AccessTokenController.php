@@ -16,7 +16,19 @@ class AccessTokenController extends Controller
      */
     public function index()
     {
-        //
+        /*$server = new \League\OAuth2\Server\AuthorizationServer;
+
+        $server->setSessionStorage(new Storage\SessionStorage);
+        $server->setAccessTokenStorage(new Storage\AccessTokenStorage);
+        $server->setClientStorage(new Storage\ClientStorage);
+        $server->setScopeStorage(new Storage\ScopeStorage);
+
+        $passwordGrant = new \League\OAuth2\Server\Grant\PasswordGrant();
+        $passwordGrant->setVerifyCredentialsCallback(function ($username, $password) {
+            // implement logic here to validate a username and password, return an ID if valid, otherwise return false
+        });
+
+        $server->addGrantType($passwordGrant);*/
     }
 
     /**

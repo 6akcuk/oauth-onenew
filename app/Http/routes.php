@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/access_token', function () {
+use LucaDegasperi\OAuth2Server\Facades\Authorizer;
 
+Route::get('oauth/access_token', function() {
+    return Response::json(Authorizer::issueAccessToken());
 });
+
+Route::get('whoami', ['middleware' => 'oauth', function() {
+    return Authorizer::getResourceOwnerId();
+}]);
