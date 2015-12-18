@@ -10,11 +10,11 @@ if (isset($_GET['act'])) {
     $name = $_GET['name'];
     $pass = $_GET['password'];
 
-    $data = file_get_contents('http://onenew.app/oauth/access_token?grant_type=password&client_id=1&client_secret=123&username='. $name .'&password='. $pass);
+    $data = file_get_contents('http://onenew.cookapp.club/oauth/access_token?grant_type=password&client_id=1&client_secret=123&username='. $name .'&password='. $pass);
     $json = json_decode($data, true);
 
     if ($json['access_token']) {
-        var_dump(file_get_contents('http://onenew.app/whoami?access_token='. $json['access_token']));
+        var_dump(file_get_contents('http://onenew.cookapp.club/whoami?access_token='. $json['access_token']));
     }
 }
 
